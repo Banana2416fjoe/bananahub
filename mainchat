@@ -1,4 +1,4 @@
--- Verifica se o Banana Hub já foi carregado
+-- Verifica se o Banana Hub já foi carregado antes de tentar carregar novamente
 if _G.BananaHubLoaded then
     -- Se já carregado, exibe uma notificação informando que está carregado
     local BananaLib = _G.BananaLib
@@ -13,11 +13,18 @@ _G.BananaHubLoaded = true
 
 -- Função para carregar o hub
 local function loadBananaHub()
-local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
-_G.BananaLib = BananaLib -- Salva a instância para acesso posterior
+    local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
+    _G.BananaLib = BananaLib -- Salva a instância para acesso posterior
 
     local Player = game.Players.LocalPlayer
-    local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
+    local Window = BananaLib:MakeWindow({
+        Name = "Banana Hub",
+        HidePremium = false,
+        SaveConfig = true,
+        ConfigFolder = "BananaHub",
+        IntroText = "Loading...",
+        IntroIcon = "rbxassetid://7734058345"
+    })
 
     -- Tab Main
     local Tab = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
@@ -33,9 +40,8 @@ _G.BananaLib = BananaLib -- Salva a instância para acesso posterior
     Tab:AddButton({ Name = "Kick Self", Callback = function()
         game.Players.LocalPlayer:Kick("You Have Been Kicked")
     end })
-    Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
-        BananaLib:Destroy()
-_G.BananaHubLoaded = false -- Marca que o Banana Hub foi destruído
+    Tab:AddButton({ Name = "Hide Banana Hub", Callback = function()
+        Window:Hide() -- Oculta a janela do Banana Hub
     end })
 
     -- Tab Anime Dimensions
