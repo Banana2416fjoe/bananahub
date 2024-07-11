@@ -41,7 +41,7 @@ local function loadBananaHub()
         game.Players.LocalPlayer:Kick("You Have Been Kicked")
     end })
     Tab:AddButton({ Name = "Hide Banana Hub", Callback = function()
-        Window:Hide() -- Oculta a janela do Banana Hub
+        Window:ToggleVisibility() -- Alterna a visibilidade da janela do Banana Hub
     end })
 
     -- Tab Anime Dimensions
