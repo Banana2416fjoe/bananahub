@@ -15,7 +15,7 @@ if not _G.MyImageButtonActive then
     ImageButton.Position = UDim2.new(0.02, 0, 0.02, 0)  -- Posição aproximada no canto superior esquerdo
     ImageButton.Draggable = true
     ImageButton.Size = UDim2.new(0, 50, 0, 50)  -- Tamanho do ImageButton
-    ImageButton.Image = "http://www.roblox.com/asset/?id=18442697626"  -- Imagem circular
+    ImageButton.Image = "rbxassetid=18442697626"  -- Imagem circular
     ImageButton.ImageColor3 = Color3.fromRGB(255, 255, 255)  -- Cor da imagem (branco)
     ImageButton.ScaleType = Enum.ScaleType.Fit  -- Ajusta a imagem para caber dentro do botão
     ImageButton.ClipsDescendants = true  -- Recorta a imagem para manter a forma circular
