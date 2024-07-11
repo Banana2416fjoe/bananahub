@@ -14,6 +14,8 @@ _G.BananaHubLoaded = true
 -- Função para carregar o hub
 local function loadBananaHub()
 local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
+_G.BananaLib = BananaLib -- Salva a instância para acesso posterior
+
     local Player = game.Players.LocalPlayer
     local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
 
