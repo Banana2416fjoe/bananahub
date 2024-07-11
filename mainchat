@@ -13,8 +13,8 @@ _G.BananaHubLoaded = true
 
 -- Função para carregar o hub
 local function loadBananaHub()
-local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
-_G.BananaLib = BananaLib -- Salva a instância para acesso posterior
+    local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
+    _G.BananaLib = BananaLib -- Salva a instância para acesso posterior
 
     local Player = game.Players.LocalPlayer
     local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
@@ -34,8 +34,9 @@ _G.BananaLib = BananaLib -- Salva a instância para acesso posterior
         game.Players.LocalPlayer:Kick("You Have Been Kicked")
     end })
     Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
+        _G.BananaHubLoaded = false  -- Marca que o Banana Hub não está mais carregado
         BananaLib:Destroy()
-BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Rejoin to destroy button", Image = "rbxassetid://4483345998", Time = 5 
+        BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Destroyed", Image = "rbxassetid://4483345998", Time = 5 })
     end })
 
     -- Tab Anime Dimensions
@@ -134,3 +135,11 @@ else
         BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub is already loaded", Image = "rbxassetid://4483345998", Time = 5 })
     end
 end
+
+-- Verifica periodicamente se o Banana Hub foi destruído e remove o botão correspondente
+spawn(function()
+    while true do
+        wait(10)  -- Intervalo de verificação em segundos (ajuste conforme necessário)
+        checkIfBananaHubDestroyed()
+    end
+end)
