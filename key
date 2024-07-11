@@ -2,11 +2,11 @@
 local scriptLoaded = false
 
 -- Função para carregar o script hub
-local function LoadScriptHub()
+local function MakeScriptHub()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/main'))()
 end
 
--- Função para enviar notificação de script já carregado
+-- Notificação para informar que o script já foi carregado
 local function NotifyScriptAlreadyLoaded()
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
     OrionLib:MakeNotification({
@@ -30,6 +30,8 @@ local function CheckKeyAndLoadScript()
     local keyInput = "string" -- Isso pode ser alterado conforme necessário
 
     -- Criação de uma janela básica para demonstração
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
+    local Player = game.Players.LocalPlayer
     local Window = OrionLib:MakeWindow({
         Name = "Banana Hub Key System",
         HidePremium = false,
@@ -42,7 +44,7 @@ local function CheckKeyAndLoadScript()
     -- Notificação inicial solicitando a chave do jogador
     OrionLib:MakeNotification({
         Name = "Logged In!",
-        Content = "You need key "..game.Players.LocalPlayer.Name..".",
+        Content = "You need key "..Player.Name..".",
         Image = "rbxassetid://7733978098",
         Time = 5
     })
@@ -81,7 +83,7 @@ local function CheckKeyAndLoadScript()
 
                 -- Carrega o script hub apenas se ainda não tiver sido carregado
                 if not scriptLoaded then
-                    LoadScriptHub()
+                    MakeScriptHub()
                     scriptLoaded = true -- Marca que o script já foi carregado
                 end
             else
@@ -103,8 +105,9 @@ local function CheckKeyAndLoadScript()
         end
     })
 
--- Chamar a função principal
-CheckKeyAndLoadScript()
+    -- Inicialização da janela do OrionLib
+    OrionLib:Init()
 end
 
-OrionLib:Init()
+-- Chamar a função principal
+CheckKeyAndLoadScript()
