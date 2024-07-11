@@ -154,6 +154,13 @@ local function loadBananaHub()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
     end })
 
+ -- Tab Zombie Uprising
+    local Tab = Window:MakeTab({ Name = "Zombie Uprising", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+    local Section = Tab:AddSection({ Name = "scripts" })
+    Tab:AddButton({ Name = "Universe X", Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/Universal-Script-Projeto/main/LKA%20By%20dqtixz%20Script"))();
+end })
+
     -- Exibindo notificação de que o Banana Hub foi carregado
     BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
 end
