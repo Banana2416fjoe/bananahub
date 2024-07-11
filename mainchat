@@ -15,7 +15,7 @@ if not _G.MyImageButtonActive then
     ImageButton.Position = UDim2.new(0.02, 0, 0.02, 0)  -- Posição aproximada no canto superior esquerdo
     ImageButton.Draggable = true
     ImageButton.Size = UDim2.new(0, 50, 0, 50)  -- Tamanho do ImageButton
-    ImageButton.Image = "rbxassetid://18442697626"  -- Imagem circular
+    ImageButton.Image = "http://www.roblox.com/asset/?id=18442697626"  -- Imagem circular
     ImageButton.ImageColor3 = Color3.fromRGB(255, 255, 255)  -- Cor da imagem (branco)
     ImageButton.ScaleType = Enum.ScaleType.Fit  -- Ajusta a imagem para caber dentro do botão
     ImageButton.ClipsDescendants = true  -- Recorta a imagem para manter a forma circular
@@ -80,6 +80,23 @@ local function loadBananaHub()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/CanisLupusXL/CanislupusXHub/main/Anime_Dimension_Simulator'))()
     end })
 
+-- Tab Blade Ball
+    local Tab = Window:MakeTab({ Name = "Blade Ball", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+    local Section = Tab:AddSection({ Name = "Farm" })
+    BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
+    Tab:AddButton({ Name = "Redz Hub", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/eng"))()
+    end })
+    Tab:AddButton({ Name = "ScoutX", Callback = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/Kozukiremboukk/Aqui-mesml/main/blades")))()
+    end })
+    Tab:AddButton({ Name = "Neon C", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/Neon.C-Hub-V5/main/UpdatedVersion"))();
+    end })
+    Tab:AddButton({ Name = "NoHaxV3", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/r4mpage4/NoHaxV3/main/BladeBallNoHax%20V3"))();
+    end })
+
     -- Tab Blox Fruits
     local Tab = Window:MakeTab({ Name = "Blox Fruits", Icon = "rbxassetid://7733799901", PremiumOnly = false })
     local Section = Tab:AddSection({ Name = "Farm" })
@@ -94,6 +111,9 @@ local function loadBananaHub()
     end })
     Tab:AddButton({ Name = "Ninja Hub Hoho", Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/NinjaHub/main/LoaderBloxFruit.lua"))()
+    end })
+    Tab:AddButton({ Name = "Vector Hub", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AAwful/VectorHub/main/Loader.lua"))()
     end })
     Tab:AddButton({ Name = "W-Azure V2", Callback = function() 
         getgenv().Team = "Marines"
@@ -119,6 +139,13 @@ local function loadBananaHub()
     end })
     Tab:AddButton({ Name = "Nexus", Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring"))()
+    end })
+
+   -- Tab TPS
+    local Tab = Window:MakeTab({ Name = "TPS", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+    local Section = Tab:AddSection({ Name = "Scripts" })
+    Tab:AddButton({ Name = "Reach n react", Callback = function()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/DDIBASAAIB/tpsfreescript/main/obfsctpsfree.lua")()
     end })
 
     -- Tab Universal
@@ -156,9 +183,9 @@ local function loadBananaHub()
 
  -- Tab Zombie Uprising
     local Tab = Window:MakeTab({ Name = "Zombie Uprising", Icon = "rbxassetid://7733799901", PremiumOnly = false })
-    local Section = Tab:AddSection({ Name = "Scripts" })
-    Tab:AddButton({ Name = "Script", Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/0N1y7RyM"))(
+    local Section = Tab:AddSection({ Name = "scripts" })
+    Tab:AddButton({ Name = "Unknown X", Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Unknownproooolucky/Unknown-Hub-X-Universal-Games/main/Games/Zombie-Uprising'))()
     end })
 
     -- Exibindo notificação de que o Banana Hub foi carregado
