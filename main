@@ -89,12 +89,16 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf
 end
 })
 local Section = Tab:AddSection({ Name = "Others" })
+Tab:AddButton({ Name = "Keyboard", Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GGH52lan/GGH52lan/main/keyboard.txt"))()
+end
+})
 Tab:AddButton({ Name = "NukeVsCity", Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader", true))()
 end
 })
-Tab:AddButton({ Name = "Keyboard", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GGH52lan/GGH52lan/main/keyboard.txt"))()
+Tab:AddButton({ Name = "Index Hub 300+ Scripts", Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IndexZHub/Loader/main/Loader"))()
 end
 })
 Tab:AddButton({ Name = "VexHub", Callback = function()
