@@ -103,9 +103,7 @@ local function CheckKeyAndLoadScript()
         end
     })
 
-    -- Inicialização da janela do OrionLib
-    OrionLib:Init()
-end
-
 -- Chamar a função principal
 CheckKeyAndLoadScript()
+
+OrionLib:Init()
