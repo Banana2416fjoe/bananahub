@@ -11,7 +11,7 @@ if not _G.MyImageButtonActive then
     ImageButton.Name = "MyImageButton"
     ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     ImageButton.BorderSizePixel = 0
-    ImageButton.Position = UDim2.new(0.5, -25, 0.5, -25)  -- Posição central aproximada
+    ImageButton.Position = UDim2.new(0.02, 0, 0.02, 0)  -- Posição aproximada no canto superior esquerdo
     ImageButton.Size = UDim2.new(0, 50, 0, 50)
     ImageButton.Draggable = true
     ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
@@ -27,6 +27,7 @@ if not _G.MyImageButtonActive then
 else
     warn("O código já está em execução.")
 end
+
 
 -- Verifica se o Banana Hub já foi carregado
 if _G.BananaHubLoaded then
