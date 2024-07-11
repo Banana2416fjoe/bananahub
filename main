@@ -124,6 +124,13 @@ local function loadBananaHub()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring"))()
     end })
 
+   -- Tab TPS
+    local Tab = Window:MakeTab({ Name = "TPS", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+    local Section = Tab:AddSection({ Name = "Scripts" })
+    Tab:AddButton({ Name = "Reach n react", Callback = function()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/DDIBASAAIB/tpsfreescript/main/obfsctpsfree.lua")()
+    end })
+
     -- Tab Universal
     local Tab = Window:MakeTab({ Name = "Universal", Icon = "rbxassetid://7733799901", PremiumOnly = false })
     local Section = Tab:AddSection({ Name = "Admin" })
