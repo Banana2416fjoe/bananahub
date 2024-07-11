@@ -1,13 +1,6 @@
--- Função para verificar se o ScreenGui e o ImageButton já existem no CoreGui
+-- Função para verificar se o ScreenGui já existe no CoreGui
 local function checkIfGuiExists()
-    local existingGui = game.CoreGui:FindFirstChild("MyScreenGui")
-    if existingGui then
-        local existingButton = existingGui:FindFirstChild("MyImageButton")
-        if existingButton then
-            return true  -- O ScreenGui e o ImageButton já existem
-        end
-    end
-    return false  -- O ScreenGui e o ImageButton não existem
+    return game.CoreGui:FindFirstChild("MyScreenGui") ~= nil
 end
 
 -- Verifica se o código já está em funcionamento
@@ -21,12 +14,11 @@ if not checkIfGuiExists() then
     -- Cria o ImageButton dentro do ScreenGui
     local ImageButton = Instance.new("ImageButton")
     ImageButton.Name = "MyImageButton"
-    ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  -- Cor de fundo branca para mostrar o botão
     ImageButton.BorderSizePixel = 0
-    ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-    ImageButton.Size = UDim2.new(0, 50, 0, 50)
-    ImageButton.Draggable = true
-    ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
+    ImageButton.Position = UDim2.new(0.5, -25, 0.5, -25)  -- Posição central
+    ImageButton.Size = UDim2.new(0, 50, 0, 50)  -- Tamanho do botão
+    ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"  -- URL da imagem do botão
     ImageButton.Parent = ScreenGui
     
     -- Conecta o evento MouseButton1Down
