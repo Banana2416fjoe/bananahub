@@ -24,7 +24,7 @@ getgenv().KeyInput = "string" --Require For The Key To Work
 
 local Tab = Window:MakeTab({
 	Name = "Key",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://773396098",
 	PremiumOnly = false
 }) --Making A Tab
 
@@ -51,7 +51,7 @@ Tab:AddButton({
             OrionLib:MakeNotification({
                 Name = "Correct Key!",
                 Content = "The key you entered is Correct.",
-                Image = "rbxassetid://4483345998",
+                Image = "rbxassetid://7743876142",
                 Time = 5
             })
             wait(1)
