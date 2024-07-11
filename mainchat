@@ -36,7 +36,7 @@ local function loadBananaHub()
     Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
         _G.BananaHubLoaded = false  -- Marca que o Banana Hub não está mais carregado
         BananaLib:Destroy()
-        BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Destroyed", Image = "rbxassetid://4483345998", Time = 5 })
+        BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Destroyed Rejoin to Remove Button", Image = "rbxassetid://4483345998", Time = 5 })
     end })
 
     -- Tab Anime Dimensions
