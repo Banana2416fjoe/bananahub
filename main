@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
 local Player = game.Players.LocalPlayer
 local Window = OrionLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
 local Tab = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
