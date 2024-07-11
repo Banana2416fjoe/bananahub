@@ -123,5 +123,14 @@ _G.BananaHubLoaded = false -- Marca que o Banana Hub foi destruído
     BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
 end
 
--- Carrega o Banana Hub ao chamar a função
-loadBananaHub()
+-- Verifica se o Banana Hub já foi carregado antes de tentar carregar novamente
+if not _G.BananaLib then
+    -- Se não foi carregado, carrega o Banana Hub
+    loadBananaHub()
+else
+    -- Se já foi carregado, exibe a notificação de que está carregado
+    local BananaLib = _G.BananaLib
+    if BananaLib then
+        BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub is already loaded", Image = "rbxassetid://4483345998", Time = 5 })
+    end
+end
