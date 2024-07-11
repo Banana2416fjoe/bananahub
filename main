@@ -1,10 +1,24 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading..." })
+local Window = OrionLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "" })
 local Tab = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
  local Section = Tab:AddSection({ Name = "Main Section" })
+Tab:AddButton({ Name = "Rejoin Server", Callback = function()
+local ts = game:GetService("TeleportService")
+local p = game:GetService("Players").LocalPlayer
+ts:Teleport(game.PlaceId, p)
+end
+})
 Tab:AddButton({ Name = "Unc Test", Callback = function()
 loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()
+end
+})
+Tab:AddButton({ Name = "Kick Self", Callback = function()
+game.Players.LocalPlayer:Kick("You Have Been Kicked")
+end
+})
+Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
+OrionLib:Destroy()
 end
 })
 local Tab = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -137,10 +151,5 @@ end
 })
 Tab:AddButton({ Name = "Universal Hub FE", Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Misc", Icon = "rbxassetid://7743875263", PremiumOnly = false })
-Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
-OrionLib:Destroy()
 end
 })
