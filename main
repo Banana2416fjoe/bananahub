@@ -1,6 +1,12 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 local Player = game.Players.LocalPlayer
 local Window = OrionLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading..." })
+local Tab = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
+ local Section = Tab:AddSection({ Name = "Main Section" })
+Tab:AddButton({ Name = "Unc Test", Callback = function()
+loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()
+end
+})
 local Tab = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://4483345998", PremiumOnly = false })
  local Section = Tab:AddSection({ Name = "Scripts" })
 Tab:AddButton({ Name = "Script CrazyDay", Callback = function()
