@@ -1,3 +1,13 @@
+-- Verifica se o script do botão já foi carregado anteriormente
+if _G.ButtonScriptLoaded then
+    print("Button script already loaded.")
+    return
+end
+
+-- Marca que o script do botão foi carregado
+_G.ButtonScriptLoaded = true
+
+-- Cria um ScreenGui para um botão de ocultar o Banana Hub
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -12,6 +22,10 @@ ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 50)
 ImageButton.Draggable = true
 ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
-ImageButton.MouseButton1Down:connect(function()
-    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
+
+-- Callback do botão para ocultar o Banana Hub
+ImageButton.MouseButton1Down:Connect(function()
+  game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
+end)
+    end
 end)
