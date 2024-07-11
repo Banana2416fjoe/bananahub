@@ -1,3 +1,39 @@
+-- Verifica se o código já está em execução usando _G
+if not _G.MyImageButtonActive then
+    -- Cria o ScreenGui
+    local ScreenGui = Instance.new("ScreenGui")
+    ScreenGui.Name = "MyScreenGui"
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ScreenGui.Parent = game.CoreGui
+    
+    -- Cria o ImageButton dentro do ScreenGui
+    local ImageButton = Instance.new("ImageButton")
+    ImageButton.Name = "MyImageButton"
+    ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  -- Cor de fundo branco para mostrar o círculo
+    ImageButton.BorderSizePixel = 0
+    ImageButton.AnchorPoint = Vector2.new(0, 0)  -- Define o ponto de ancoragem para o canto superior esquerdo
+    ImageButton.Position = UDim2.new(0.02, 0, 0.02, 0)  -- Posição aproximada no canto superior esquerdo
+    ImageButton.Draggable = true
+    ImageButton.Size = UDim2.new(0, 50, 0, 50)  -- Tamanho do ImageButton
+    ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"  -- Imagem circular
+    ImageButton.ImageColor3 = Color3.fromRGB(255, 255, 255)  -- Cor da imagem (branco)
+    ImageButton.ScaleType = Enum.ScaleType.Fit  -- Ajusta a imagem para caber dentro do botão
+    ImageButton.ClipsDescendants = true  -- Recorta a imagem para manter a forma circular
+    ImageButton.Parent = ScreenGui
+    
+    -- Conecta o evento MouseButton1Down
+    ImageButton.MouseButton1Down:Connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game)
+    end)
+    
+    -- Define _G para indicar que o código está em execução
+    _G.MyImageButtonActive = true
+else
+    warn("O código já está em execução.")
+end
+
+
+
 -- Verifica se o Banana Hub já foi carregado
 if _G.BananaHubLoaded then
     -- Se já carregado, exibe uma notificação informando que está carregado
@@ -13,8 +49,8 @@ _G.BananaHubLoaded = true
 
 -- Função para carregar o hub
 local function loadBananaHub()
-local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
-_G.BananaLib = BananaLib -- Salva a instância para acesso posterior
+    local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
+    _G.BananaLib = BananaLib -- Salva a instância para acesso posterior
 
     local Player = game.Players.LocalPlayer
     local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
