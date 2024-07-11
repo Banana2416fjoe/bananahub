@@ -88,6 +88,9 @@ local function loadBananaHub()
         _G.UI_Size = 150 -- config ui size
         loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/-beta-/main/AutoParry.lua"))()
     end })
+    Tab:AddButton({ Name = "Redz Hub", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/eng"))()
+    end })
 
     -- Tab Blox Fruits
     local Tab = Window:MakeTab({ Name = "Blox Fruits", Icon = "rbxassetid://7733799901", PremiumOnly = false })
