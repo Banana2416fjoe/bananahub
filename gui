@@ -1,31 +1,33 @@
--- Verifica se o script do botão já foi carregado anteriormente
-if _G.ButtonScriptLoaded then
-    print("Button script already loaded.")
-    return
+local isFunctioning = false  -- Variável para verificar se o código já está funcionando
+
+-- Função para verificar se o código já está em funcionamento
+local function checkIfFunctioning()
+    -- Implemente a lógica para verificar se o código já está funcionando
+    -- Por exemplo, verificando se o ImageButton já foi criado anteriormente
+    return ImageButton.Parent ~= nil
 end
 
--- Marca que o script do botão foi carregado
-_G.ButtonScriptLoaded = true
+-- Verifica se o código já está funcionando
+if not isFunctioning and not checkIfFunctioning() then
+    local ScreenGui = Instance.new("ScreenGui")
+    local ImageButton = Instance.new("ImageButton")
+    local UICorner = Instance.new("UICorner")
 
--- Cria um ScreenGui para um botão de ocultar o Banana Hub
-local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
-local UICorner = Instance.new("UICorner")
+    ScreenGui.Parent = game.CoreGui
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ImageButton.Parent = ScreenGui
+    ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    ImageButton.BorderSizePixel = 0
+    ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+    ImageButton.Size = UDim2.new(0, 50, 0, 50)
+    ImageButton.Draggable = true
+    ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
+    ImageButton.MouseButton1Down:connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
+    end)
 
-ImageButton.Parent = ScreenGui
-ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton.Size = UDim2.new(0, 50, 0, 50)
-ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
-
--- Callback do botão para ocultar o Banana Hub
-ImageButton.MouseButton1Down:Connect(function()
-  game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
-end)
-    end
-end)
+    isFunctioning = true  -- Marca que o código está funcionando
+else
+    warn("O código já está em funcionamento.")
+end
