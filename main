@@ -84,12 +84,14 @@ local function loadBananaHub()
     local Tab = Window:MakeTab({ Name = "Blade Ball", Icon = "rbxassetid://7733799901", PremiumOnly = false })
     local Section = Tab:AddSection({ Name = "Farm" })
     BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
-    Tab:AddButton({ Name = "Bedol Hub V2", Callback = function()
-        _G.UI_Size = 150 -- config ui size
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/-beta-/main/AutoParry.lua"))()
-    end })
     Tab:AddButton({ Name = "Redz Hub", Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/eng"))()
+    end })
+    Tab:AddButton({ Name = "Spam,Parry", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Atreus-Hub/scripts/main/Pre-Update%20Blade%20Ball"))()
+    end })
+    Tab:AddButton({ Name = "Neon C", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/Neon.C-Hub-V5/main/UpdatedVersion"))();
     end })
 
     -- Tab Blox Fruits
