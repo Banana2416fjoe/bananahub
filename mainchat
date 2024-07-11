@@ -13,6 +13,7 @@ if not _G.MyImageButtonActive then
     ImageButton.BorderSizePixel = 0
     ImageButton.AnchorPoint = Vector2.new(0, 0)  -- Define o ponto de ancoragem para o canto superior esquerdo
     ImageButton.Position = UDim2.new(0.02, 0, 0.02, 0)  -- Posição aproximada no canto superior esquerdo
+    ImageButton.Draggable = true
     ImageButton.Size = UDim2.new(0, 50, 0, 50)  -- Tamanho do ImageButton
     ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"  -- Imagem circular
     ImageButton.ImageColor3 = Color3.fromRGB(255, 255, 255)  -- Cor da imagem (branco)
