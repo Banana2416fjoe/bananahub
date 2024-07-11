@@ -95,6 +95,9 @@ local function loadBananaHub()
     Tab:AddButton({ Name = "Ninja Hub Hoho", Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/NinjaHub/main/LoaderBloxFruit.lua"))()
     end })
+    Tab:AddButton({ Name = "Vector Hub", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AAwful/VectorHub/main/Loader.lua"))()
+    end })
     Tab:AddButton({ Name = "W-Azure V2", Callback = function() 
         getgenv().Team = "Marines"
         getgenv().AutoLoad = true
