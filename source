@@ -628,7 +628,7 @@ function BananaLib:MakeWindow(WindowConfig)
 		UIHidden = true
 		BananaLib:MakeNotification({
 			Name = "Interface Hidden",
-			Content = "Tap Left Control to reopen the interface",
+			Content = "Tap the button on screen to reopen the interface",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
