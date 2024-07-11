@@ -1,6 +1,6 @@
 local player = game.Players.LocalPlayer local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() local Window = OrionLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub"})
 local Tab = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
-Tab:AddParagraph("Welcome","Banana Hub is an universal script Hub")
+local Section = Tab:AddSection({ Name = "Welcome" })
 end
 })
 local Tab = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://4483345998", PremiumOnly = false })
