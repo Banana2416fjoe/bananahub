@@ -1,6 +1,6 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
+local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
 local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
+local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
 local Tab = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
  local Section = Tab:AddSection({ Name = "Main Section" })
 Tab:AddButton({ Name = "Rejoin Server", Callback = function()
@@ -18,7 +18,7 @@ game.Players.LocalPlayer:Kick("You Have Been Kicked")
 end
 })
 Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
-OrionLib:Destroy()
+BananaLib:Destroy()
 end
 })
 local Tab = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://7733799901", PremiumOnly = false })
@@ -29,7 +29,7 @@ end
 })
 local Tab = Window:MakeTab({ Name = "Blox Fruits", Icon = "rbxassetid://7733799901", PremiumOnly = false })
  local Section = Tab:AddSection({ Name = "Farm" })
-OrionLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
+BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
 Tab:AddButton({ Name = "Auto Chest", Callback = function()
 _G.JoinTeam = "Marines"
         _G.Stop_If_Has_Items = true
