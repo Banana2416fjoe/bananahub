@@ -127,3 +127,8 @@ Tab:AddButton({ Name = "Script CrazyDay", Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/CanisLupusXL/CanislupusXHub/main/Anime_Dimension_Simulator'))()
 end
 })
+local Tab = Window:MakeTab({ Name = "Misc", Icon = "rbxassetid://7743875263", PremiumOnly = false })
+Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
+
+end
+})
