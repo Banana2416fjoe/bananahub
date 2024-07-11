@@ -35,7 +35,6 @@ _G.BananaLib = BananaLib -- Salva a instância para acesso posterior
     end })
     Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
         BananaLib:Destroy()
-_G.BananaHubLoaded = false -- Marca que o Banana Hub foi destruído
     end })
 
     -- Tab Anime Dimensions
