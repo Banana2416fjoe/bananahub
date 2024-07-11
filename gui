@@ -9,12 +9,16 @@ if not _G.MyImageButtonActive then
     -- Cria o ImageButton dentro do ScreenGui
     local ImageButton = Instance.new("ImageButton")
     ImageButton.Name = "MyImageButton"
-    ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  -- Cor de fundo branco para mostrar o círculo
     ImageButton.BorderSizePixel = 0
-    ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-    ImageButton.Size = UDim2.new(0, 50, 0, 50)
+    ImageButton.AnchorPoint = Vector2.new(0, 0)  -- Define o ponto de ancoragem para o canto superior esquerdo
+    ImageButton.Position = UDim2.new(0.02, 0, 0.02, 0)  -- Posição aproximada no canto superior esquerdo
     ImageButton.Draggable = true
-    ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
+    ImageButton.Size = UDim2.new(0, 50, 0, 50)  -- Tamanho do ImageButton
+    ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"  -- Imagem circular
+    ImageButton.ImageColor3 = Color3.fromRGB(255, 255, 255)  -- Cor da imagem (branco)
+    ImageButton.ScaleType = Enum.ScaleType.Fit  -- Ajusta a imagem para caber dentro do botão
+    ImageButton.ClipsDescendants = true  -- Recorta a imagem para manter a forma circular
     ImageButton.Parent = ScreenGui
     
     -- Conecta o evento MouseButton1Down
