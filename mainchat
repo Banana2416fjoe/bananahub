@@ -1,15 +1,14 @@
--- Variável para controlar se o código já está em execução
-local isRunning = false
+-- Verifica se o Banana Hub já foi carregado
+if _G.BananaHubLoaded then
+    return
+end
 
--- Função para carregar o hub, verificando se já está em execução
-local function loadHub()
-    if isRunning then
-        return -- Se já estiver em execução, não faz nada
-    end
+-- Marca que o Banana Hub está sendo carregado
+_G.BananaHubLoaded = true
 
-    isRunning = true
-
-    local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
+-- Função para carregar o hub
+local function loadBananaHub()
+local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
     local Player = game.Players.LocalPlayer
     local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
 
@@ -29,6 +28,7 @@ local function loadHub()
     end })
     Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
         BananaLib:Destroy()
+_G.BananaHubLoaded = false -- Marca que o Banana Hub foi destruído
     end })
 
     -- Tab Anime Dimensions
@@ -114,9 +114,7 @@ local function loadHub()
 
     -- Exibindo notificação de que o Banana Hub foi carregado
     BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
-
-    isRunning = false
 end
 
--- Carrega o hub ao chamar a função
-loadHub()
+-- Carrega o Banana Hub ao chamar a função
+loadBananaHub()
