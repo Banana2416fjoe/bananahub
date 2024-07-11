@@ -1,21 +1,25 @@
-local isFunctioning = false  -- Variável para verificar se o código já está funcionando
-
--- Função para verificar se o código já está em funcionamento
-local function checkIfFunctioning()
-    -- Implemente a lógica para verificar se o código já está funcionando
-    -- Por exemplo, verificando se o ImageButton já foi criado anteriormente
-    return ImageButton.Parent ~= nil
+-- Verifica se o ImageButton já existe no CoreGui
+local function checkIfButtonExists()
+    local existingGui = game.CoreGui:FindFirstChild("MyScreenGui")
+    if existingGui then
+        local existingButton = existingGui:FindFirstChild("MyImageButton")
+        if existingButton then
+            return true  -- O botão já existe
+        end
+    end
+    return false  -- O botão não existe
 end
 
--- Verifica se o código já está funcionando
-if not isFunctioning and not checkIfFunctioning() then
+-- Verifica se o código já está em funcionamento
+if not checkIfButtonExists() then
+    -- Cria o ScreenGui e o ImageButton
     local ScreenGui = Instance.new("ScreenGui")
-    local ImageButton = Instance.new("ImageButton")
-    local UICorner = Instance.new("UICorner")
-
+    ScreenGui.Name = "MyScreenGui"
     ScreenGui.Parent = game.CoreGui
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+    local ImageButton = Instance.new("ImageButton")
+    ImageButton.Name = "MyImageButton"
     ImageButton.Parent = ScreenGui
     ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     ImageButton.BorderSizePixel = 0
@@ -23,11 +27,11 @@ if not isFunctioning and not checkIfFunctioning() then
     ImageButton.Size = UDim2.new(0, 50, 0, 50)
     ImageButton.Draggable = true
     ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
-    ImageButton.MouseButton1Down:connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
+    
+    -- Conecta o evento MouseButton1Down
+    ImageButton.MouseButton1Down:Connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game)
     end)
-
-    isFunctioning = true  -- Marca que o código está funcionando
 else
     warn("O código já está em funcionamento.")
 end
