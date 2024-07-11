@@ -1,53 +1,42 @@
--- Variável de controle para verificar se a função MakeScriptHub já foi executada
-local scriptHubAlreadyLoaded = false
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))() --This Will Load The Script Code
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+		Name = "Banana Hub Key System",
+		HidePremium = false,
+		SaveConfig = true,
+		ConfigFolder = "OrionTest",
+        IntroText = "Loading Script...", IntroIcon = "rbxassetid://7734058345"       
+}) --This Will Load The Script Hub
 
--- Carregamento do OrionLib e configuração inicial
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
-local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({
-    Name = "Banana Hub Key System",
-    HidePremium = false,
-    SaveConfig = true,
-    ConfigFolder = "OrionTest",
-    IntroText = "Loading Script...",
-    IntroIcon = "rbxassetid://7734058345"
-})
-
--- Função para carregar o script hub (será chamada apenas uma vez)
-local function MakeScriptHub()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/main'))()
+function MakeScriptHub()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/main'))() --Put The Script That Will Load If The Key Is Correct Here
 end
 
--- Notificação inicial solicitando a chave do jogador
 OrionLib:MakeNotification({
-    Name = "Logged In!",
-    Content = "You need key "..Player.Name..".",
-    Image = "rbxassetid://7733978098",
-    Time = 5
-})
+	Name = "Logged In!",
+	Content = "You need key "..Player.Name..".",
+	Image = "rbxassetid://7733978098",
+	Time = 5
+}) --Notification
 
--- Definição da chave correta e variável para a entrada do jogador
-getgenv().Key = "juliano"
-getgenv().KeyInput = "string"
+getgenv().Key = "juliano" --Put The Correct Key Here
+getgenv().KeyInput = "string" --Require For The Key To Work
 
--- Criação da tab "Key" para entrada da chave
 local Tab = Window:MakeTab({
-    Name = "Key",
-    Icon = "rbxassetid://7733965118",
-    PremiumOnly = false
-})
+	Name = "Key",
+	Icon = "rbxassetid://7733965118",
+	PremiumOnly = false
+}) --Making A Tab
 
--- Adição de um campo de texto para entrada da chave
 Tab:AddTextbox({
-    Name = "Key",
-    Default = "Enter Key.",
-    TextDisappear = true,
-    Callback = function(Value)
-        getgenv().KeyInput = Value
-    end
-})
+	Name = "Key",
+	Default = "Enter Key.",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().KeyInput = Value
+	end	  
+}) --You Will Enter The Key Here
 
--- Adição do botão para verificar a chave
 Tab:AddButton({
     Name = "Check Key",
     Callback = function()
@@ -66,13 +55,11 @@ Tab:AddButton({
                 Time = 5
             })
             wait(1)
-            OrionLib:Destroy() -- Fecha a janela após o carregamento correto da chave
-            if not scriptHubAlreadyLoaded then
-                MakeScriptHub() -- Carrega o script hub apenas se ainda não tiver sido carregado
-                scriptHubAlreadyLoaded = true -- Marca que o script já foi carregado
-            end
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
         else
-            OrionLib:MakeNotification({
+           OrionLib:MakeNotification({
                 Name = "Checking Key",
                 Content = "Checking The Key You Entered",
                 Image = "rbxassetid://7733993311",
@@ -87,15 +74,13 @@ Tab:AddButton({
             })
         end
     end
-})
+}) --This Will Check The Key You Entered
 
--- Adição do botão para copiar a chave
 Tab:AddButton({
-    Name = "Copy Key",
-    Callback = function()
-        setclipboard(getgenv().Key) -- Copia a chave correta para a área de transferência
-    end
-})
-
--- Inicialização da janela do OrionLib
-OrionLib:Init()
+	Name = "Copy Key",
+	Callback = function()
+      		setclipboard("Put The Link Here") --This Will Copy The Link Of The Key
+  	end    
+}) 
+    
+OrionLib:Init() --Require If The Script Is Done
