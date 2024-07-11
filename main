@@ -157,8 +157,8 @@ local function loadBananaHub()
  -- Tab Zombie Uprising
     local Tab = Window:MakeTab({ Name = "Zombie Uprising", Icon = "rbxassetid://7733799901", PremiumOnly = false })
     local Section = Tab:AddSection({ Name = "scripts" })
-    Tab:AddButton({ Name = "Universe X", Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/Universal-Script-Projeto/main/LKA%20By%20dqtixz%20Script"))();
+    Tab:AddButton({ Name = "Unknown X", Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Unknownproooolucky/Unknown-Hub-X-Universal-Games/main/Games/Zombie-Uprising'))()
     end })
 
     -- Exibindo notificação de que o Banana Hub foi carregado
