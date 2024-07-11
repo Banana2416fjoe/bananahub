@@ -1,3 +1,12 @@
+-- Função para destruir o ScreenGui e o ImageButton
+local function destroyButton()
+    local ScreenGui = game.CoreGui:FindFirstChild("MyScreenGui")
+    if ScreenGui then
+        ScreenGui:Destroy()
+        _G.MyImageButtonActive = false  -- Marca que o botão não está mais ativo
+    end
+end
+
 -- Verifica se o código já está em execução usando _G
 if not _G.MyImageButtonActive then
     -- Cria o ScreenGui
@@ -24,6 +33,23 @@ if not _G.MyImageButtonActive then
     
     -- Define _G para indicar que o código está em execução
     _G.MyImageButtonActive = true
+    
+    -- Função para verificar se o Banana Hub foi destruído
+    local function checkIfBananaHubDestroyed()
+        if _G.BananaHubLoaded and not _G.BananaLib then
+            -- Banana Hub foi destruído, então destrói o botão também
+            destroyButton()
+        end
+    end
+    
+    -- Verificar periodicamente se o Banana Hub foi destruído
+    spawn(function()
+        while true do
+            wait(1)  -- Verifica a cada segundo (ajuste conforme necessário)
+            checkIfBananaHubDestroyed()
+        end
+    end)
+    
 else
     warn("O código já está em execução.")
 end
