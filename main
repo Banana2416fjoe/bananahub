@@ -97,7 +97,7 @@ getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
  loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/main/FreeAutoBounty.lua'))()
 end
 })
-local Tab = Window:MakeTab({ Name = "Mm2", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+local Tab = Window:MakeTab({ Name = "Murder Mystery 2", Icon = "rbxassetid://7733799901", PremiumOnly = false })
  local Section = Tab:AddSection({ Name = "Scripts" })
 Tab:AddButton({ Name = "Symphony Hub", Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
