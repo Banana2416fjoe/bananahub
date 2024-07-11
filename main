@@ -1,4 +1,10 @@
 local player = game.Players.LocalPlayer local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() local Window = OrionLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub"})
+local Tab = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+ local Section = Tab:AddSection({ Name = "Scripts" })
+Tab:AddButton({ Name = "Script CrazyDay", Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/CanisLupusXL/CanislupusXHub/main/Anime_Dimension_Simulator'))()
+end
+})
 local Tab = Window:MakeTab({ Name = "Blox Fruits", Icon = "rbxassetid://7743875263", PremiumOnly = false })
  local Section = Tab:AddSection({ Name = "Farm" })
 OrionLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
@@ -69,6 +75,22 @@ getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
  loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/main/FreeAutoBounty.lua'))()
 end
 })
+local Tab = Window:MakeTab({ Name = "Mm2", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+ local Section = Tab:AddSection({ Name = "Scripts" })
+Tab:AddButton({ Name = "Symphony Hub", Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
+end
+})
+local Tab = Window:MakeTab({ Name = "Skywars/Bedwars", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+ local Section = Tab:AddSection({ Name = "Scripts" })
+Tab:AddButton({ Name = "Vape V4", Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end
+})
+Tab:AddButton({ Name = "Nexus", Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring"))()
+end
+})
 local Tab = Window:MakeTab({ Name = "Universal", Icon = "rbxassetid://7734042307", PremiumOnly = false })
  local Section = Tab:AddSection({ Name = "Admin" })
 Tab:AddButton({ Name = "Infinite Yield Reborn", Callback = function()
@@ -107,28 +129,6 @@ end
 })
 Tab:AddButton({ Name = "Universal Hub FE", Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Mm2", Icon = "rbxassetid://4483345998", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Scripts" })
-Tab:AddButton({ Name = "Symphony Hub", Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Skywars/Bedwars", Icon = "rbxassetid://4483345998", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Scripts" })
-Tab:AddButton({ Name = "Vape V4", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-end
-})
-Tab:AddButton({ Name = "Nexus", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring"))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://4483345998", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Scripts" })
-Tab:AddButton({ Name = "Script CrazyDay", Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/CanisLupusXL/CanislupusXHub/main/Anime_Dimension_Simulator'))()
 end
 })
 local Tab = Window:MakeTab({ Name = "Misc", Icon = "rbxassetid://7743875263", PremiumOnly = false })
