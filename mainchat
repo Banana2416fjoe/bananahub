@@ -1,74 +1,83 @@
 local BananaLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Banana2416fjoe/bananahub/main/source')))()
 local Player = game.Players.LocalPlayer
 local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "BananaHub", IntroText = "Loading...", IntroIcon = "rbxassetid://7734058345" })
-local Tab = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Main Section" })
-Tab:AddButton({ Name = "Rejoin Server", Callback = function()
-local ts = game:GetService("TeleportService")
-local p = game:GetService("Players").LocalPlayer
-ts:Teleport(game.PlaceId, p)
-end
-})
-Tab:AddButton({ Name = "Unc Test", Callback = function()
-loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()
-end
-})
-Tab:AddButton({ Name = "Kick Self", Callback = function()
-game.Players.LocalPlayer:Kick("You Have Been Kicked")
-end
-})
-Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
-BananaLib:Destroy()
-end
-})
-local Tab = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://7733799901", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Scripts" })
-Tab:AddButton({ Name = "Script CrazyDay", Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/CanisLupusXL/CanislupusXHub/main/Anime_Dimension_Simulator'))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Blox Fruits", Icon = "rbxassetid://7733799901", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Farm" })
+
+-- Tab Main
+local TabMain = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
+local SectionMain = TabMain:AddSection({ Name = "Main Section" })
+
+SectionMain:AddButton({ Name = "Rejoin Server", Callback = function()
+    local ts = game:GetService("TeleportService")
+    local p = game:GetService("Players").LocalPlayer
+    ts:Teleport(game.PlaceId, p)
+end })
+
+SectionMain:AddButton({ Name = "Unc Test", Callback = function()
+    loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()
+end })
+
+SectionMain:AddButton({ Name = "Kick Self", Callback = function()
+    game.Players.LocalPlayer:Kick("You Have Been Kicked")
+end })
+
+SectionMain:AddButton({ Name = "Destroy Banana Hub", Callback = function()
+    BananaLib:Destroy()
+end })
+
+-- Tab Anime Dimensions
+local TabAnimeDimensions = Window:MakeTab({ Name = "Anime Dimensions", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+local SectionAnimeDimensions = TabAnimeDimensions:AddSection({ Name = "Scripts" })
+
+SectionAnimeDimensions:AddButton({ Name = "Script CrazyDay", Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/CanisLupusXL/CanislupusXHub/main/Anime_Dimension_Simulator'))()
+end })
+
+-- Tab Blox Fruits
+local TabBloxFruits = Window:MakeTab({ Name = "Blox Fruits", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+local SectionBloxFruitsFarm = TabBloxFruits:AddSection({ Name = "Farm" })
+
 BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub Loaded", Image = "rbxassetid://4483345998", Time = 5 })
-Tab:AddButton({ Name = "Auto Chest", Callback = function()
-_G.JoinTeam = "Marines"
-        _G.Stop_If_Has_Items = true
-         loadstring(game:HttpGet("https://github.com/PNguyen0199/Script/raw/main/Trash_Auto_Chest.lua"))()
-end
-})
-Tab:AddButton({ Name = "Ninja Hub Azure", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/NinjaHub/main/ninjahub.lua"))()
-end
-})
- Tab:AddButton({ Name = "Ninja Hub Hoho", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/NinjaHub/main/LoaderBloxFruit.lua"))()
-end
-}) 
-Tab:AddButton({ Name = "W-Azure V2", Callback = function() 
-getgenv().Team = "Marines"
-getgenv().AutoLoad = true
-getgenv().SlowLoadUi = false
-getgenv().ForceUseSilentAimDashModifier = false
-getgenv().ForceUseWalkSpeedModifier = false
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
-end
-})
-local Section = Tab:AddSection({ Name = "Bounty" })
-Tab:AddButton({ Name = "W-Azure Bounty", Callback = function()
-getgenv().SpamSkill = false
-getgenv().AutoUseRaceV3 = true
-getgenv().AutoUseRacev4 = true
-getgenv().SpamSkillOnRaceV4 = true
-getgenv().Invisible = true
-getgenv().InCombatNoReset = true
-getgenv().Team = "Pirates" -- Marines
-getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
- getgenv().Setting = { -- Select Weapon, Self Explain
+
+SectionBloxFruitsFarm:AddButton({ Name = "Auto Chest", Callback = function()
+    _G.JoinTeam = "Marines"
+    _G.Stop_If_Has_Items = true
+    loadstring(game:HttpGet("https://github.com/PNguyen0199/Script/raw/main/Trash_Auto_Chest.lua"))()
+end })
+
+SectionBloxFruitsFarm:AddButton({ Name = "Ninja Hub Azure", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/NinjaHub/main/ninjahub.lua"))()
+end })
+
+SectionBloxFruitsFarm:AddButton({ Name = "Ninja Hub Hoho", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/NinjaHub/main/LoaderBloxFruit.lua"))()
+end })
+
+SectionBloxFruitsFarm:AddButton({ Name = "W-Azure V2", Callback = function()
+    getgenv().Team = "Marines"
+    getgenv().AutoLoad = true
+    getgenv().SlowLoadUi = false
+    getgenv().ForceUseSilentAimDashModifier = false
+    getgenv().ForceUseWalkSpeedModifier = false
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+end })
+
+local SectionBounty = TabBloxFruits:AddSection({ Name = "Bounty" })
+
+SectionBounty:AddButton({ Name = "W-Azure Bounty", Callback = function()
+    getgenv().SpamSkill = false
+    getgenv().AutoUseRaceV3 = true
+    getgenv().AutoUseRacev4 = true
+    getgenv().SpamSkillOnRaceV4 = true
+    getgenv().Invisible = true
+    getgenv().InCombatNoReset = true
+    getgenv().Team = "Pirates" -- Marines
+    getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
+    getgenv().Setting = { -- Select Weapon, Self Explain
         ["Melee"] = {["Enable"] = true,["Delay"] = 3,
-          ["Skills"] = {
-            ["Z"] = {["Enable"] = true,["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
-            [ "X"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
-            ["C"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+            ["Skills"] = {
+                ["Z"] = {["Enable"] = true,["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
+                ["X"] = {["Enable"] = true,["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
+                ["C"] = {["Enable"] = true,["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
             },
         },
         ["Blox Fruit"] = {["Enable"] = true, ["Delay"] = 4,
@@ -89,67 +98,32 @@ getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
         ["Gun"] = {["Enable"] = true, ["Delay"] = 2,
             ["Skills"] = {
                 ["Z"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
-                ["X"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,
-                },
+                ["X"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
             },
         }
     }
- loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/main/FreeAutoBounty.lua'))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Murder Mystery 2", Icon = "rbxassetid://7733799901", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Scripts" })
-Tab:AddButton({ Name = "Symphony Hub", Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Skywars/Bedwars", Icon = "rbxassetid://7733799901", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Scripts" })
-Tab:AddButton({ Name = "Vape V4", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-end
-})
-Tab:AddButton({ Name = "Nexus", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring"))()
-end
-})
-local Tab = Window:MakeTab({ Name = "Universal", Icon = "rbxassetid://7733799901", PremiumOnly = false })
- local Section = Tab:AddSection({ Name = "Admin" })
-Tab:AddButton({ Name = "Infinite Yield Reborn", Callback = function()
-loadstring(game:HttpGet("https://github.com/fuckusfm/infiniteyield-reborn/raw/master/source"))()
-end
-})
-local Section = Tab:AddSection({ Name = "Player" })
-Tab:AddButton({ Name = "Fly V3", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
-end
-})
-Tab:AddButton({ Name = "Npc Hitbox Expander", Callback = function()
-loadstring(game:HttpGet("https://hastebin.skyra.pw/raw/zayajuquva"))()
-end
-})
-Tab:AddButton({ Name = "OP Fling", Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'),true))()
-end
-})
-local Section = Tab:AddSection({ Name = "Others" })
-Tab:AddButton({ Name = "Keyboard", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GGH52lan/GGH52lan/main/keyboard.txt"))()
-end
-})
-Tab:AddButton({ Name = "NukeVsCity", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader", true))()
-end
-})
-Tab:AddButton({ Name = "Index Hub 300+ Scripts", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/IndexZHub/Loader/main/Loader"))()
-end
-})
-Tab:AddButton({ Name = "VexHub", Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexHub"))()
-end
-})
-Tab:AddButton({ Name = "Universal Hub FE", Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
-end
-})
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/main/FreeAutoBounty.lua'))()
+end })
+
+-- Tab Murder Mystery 2
+local TabMurderMystery2 = Window:MakeTab({ Name = "Murder Mystery 2", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+local SectionMurderMystery2Scripts = TabMurderMystery2:AddSection({ Name = "Scripts" })
+
+SectionMurderMystery2Scripts:AddButton({ Name = "Symphony Hub", Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
+end })
+
+-- Tab Skywars/Bedwars
+local TabSkywarsBedwars = Window:MakeTab({ Name = "Skywars/Bedwars", Icon = "rbxassetid://7733799901", PremiumOnly = false })
+local SectionSkywarsBedwarsScripts = TabSkywarsBedwars:AddSection({ Name = "Scripts" })
+
+SectionSkywarsBedwarsScripts:AddButton({ Name = "Vape V4", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end })
+
+SectionSkywarsBedwarsScripts:AddButton({ Name = "Nexus", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring"))()
+end })
+
+-- Tab Universal
+local TabUniversal = Window:Make
