@@ -108,4 +108,3 @@ CheckKeyAndLoadScript()
 end
 
 OrionLib:Init()
-end
