@@ -35,6 +35,7 @@ _G.BananaLib = BananaLib -- Salva a instância para acesso posterior
     end })
     Tab:AddButton({ Name = "Destroy Banana Hub", Callback = function()
         BananaLib:Destroy()
+BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Rejoin to destroy button", Image = "rbxassetid://4483345998", Time = 5 
     end })
 
     -- Tab Anime Dimensions
