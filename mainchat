@@ -2,7 +2,7 @@
 if _G.BananaHubLoaded then
     -- Se já carregado, exibe uma notificação informando que está carregado
     local BananaLib = _G.BananaLib
-    if Banan|aLib then
+    if BananaLib then
         BananaLib:MakeNotification({ Name = "Banana Hub", Content = "Banana Hub is already loaded", Image = "rbxassetid://4483345998", Time = 5 })
     end
     return
