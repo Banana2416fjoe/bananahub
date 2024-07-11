@@ -105,5 +105,7 @@ local function CheckKeyAndLoadScript()
 
 -- Chamar a função principal
 CheckKeyAndLoadScript()
+end
 
 OrionLib:Init()
+end
