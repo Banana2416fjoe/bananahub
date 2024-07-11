@@ -93,6 +93,9 @@ local function loadBananaHub()
     Tab:AddButton({ Name = "Neon C", Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/Neon.C-Hub-V5/main/UpdatedVersion"))();
     end })
+    Tab:AddButton({ Name = "NoHaxV3", Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/r4mpage4/NoHaxV3/main/BladeBallNoHax%20V3"))();
+    end })
 
     -- Tab Blox Fruits
     local Tab = Window:MakeTab({ Name = "Blox Fruits", Icon = "rbxassetid://7733799901", PremiumOnly = false })
