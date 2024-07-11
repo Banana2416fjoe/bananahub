@@ -5,18 +5,6 @@ local Window = BananaLib:MakeWindow({Name = "Banana Hub", HidePremium = false, S
 -- Tab Main
 local TabMain = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://7733960981", PremiumOnly = false })
 local SectionMain = TabMain:AddSection({ Name = "Main Section" })
-local functions = {
-    { Name = "unc test", ScriptUrl = "loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()" },
-    { Name = "rejoin server", ScriptUrl = "example" },
-    { Name = "Script 3", ScriptUrl = "https://example.com/script3.lua" },
-}
-
--- Dropdown para selecionar as funções
-local Dropdown = Section:AddDropdown({ Name = "Select Script", Options = functions, Callback = function(selectedOption)
-    -- Aqui, selectedOption contém a tabela do item selecionado no dropdown
-    local scriptUrl = selectedOption.ScriptUrl
-    loadstring(game:HttpGet(scriptUrl))()
-end })
 
 SectionMain:AddButton({ Name = "Rejoin Server", Callback = function()
     local ts = game:GetService("TeleportService")
