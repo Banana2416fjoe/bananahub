@@ -5,7 +5,7 @@ local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
 		HidePremium = false,
 		SaveConfig = true,
 		ConfigFolder = "OrionTest",
-        IntroText = "Loading Script..."       
+        IntroText = "Loading Script...", IntroIcon = "rbxassetid://7734058345"       
 }) --This Will Load The Script Hub
 
 function MakeScriptHub()
@@ -15,7 +15,7 @@ end
 OrionLib:MakeNotification({
 	Name = "Logged In!",
 	Content = "You need key "..Player.Name..".",
-	Image = "rbxassetid://4483345998",
+	Image = "rbxassetid://7733978098",
 	Time = 5
 }) --Notification
 
@@ -62,7 +62,7 @@ Tab:AddButton({
            OrionLib:MakeNotification({
                 Name = "Checking Key",
                 Content = "Checking The Key You Entered",
-                Image = "rbxassetid://4483345998",
+                Image = "rbxassetid://7743878857",
                 Time = 5
             })
             wait(2)
