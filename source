@@ -635,7 +635,7 @@ function BananaLib:MakeWindow(WindowConfig)
 	end)
 
 	AddConnection(UserInputService.InputBegan, function(Input)
-		if Input.KeyCode == Enum.KeyCode.LeftControl and UIHidden == true then
+		if Input.KeyCode == Enum.KeyCode.M UIHidden == true then
 			MainWindow.Visible = true
 		end
 	end)
