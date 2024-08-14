@@ -23,7 +23,7 @@ if not _G.MyImageButtonActive then
     
     -- Conecta o evento MouseButton1Down
     ImageButton.MouseButton1Down:Connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.M, false, game)
     end)
     
     -- Define _G para indicar que o código está em execução
